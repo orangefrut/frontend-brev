@@ -1,5 +1,3 @@
-import React from 'react'
-
 type Presentation = {
     slides: Slides,
     highlighting: Highlighting,
@@ -183,12 +181,13 @@ function addObjectInPresentation(object: TextBlock | Shape | Picture, slides: Sl
     }
 }
 
-function deleteSlides(presentation: Presentation, slides: Slides): Presentation {
+function deleteSlides(presentation: Presentation, ids: string[]): Presentation 
+{
     return {
         ...presentation,
         slides: presentation.slides.filter((slide) => {
-            if (slide.id == '') {
-                slides.splice(NewSlides)
+            if (slide.id == ids[ids.length]){
+                ids.splice(ids.length, 1)
             }
         })
     }
